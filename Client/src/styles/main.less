@@ -1,0 +1,110 @@
+@borderColor: #494949;
+@PrimaryFontColor: #a4ada1;
+@PrimaryBackgroundColor: rgb(55, 55, 55);
+@SecondaryBackgroundColor: #292929;
+@HoverColor:  #252525;
+@ActiveColor: #1f1f1f;
+@DefaultPadding: 10px;
+
+* {
+    font-family: Helvetica;
+    font-size: medium;
+    box-sizing: border-box;
+    color: @PrimaryFontColor;
+    user-select: none;
+    scrollbar-width: thin;
+    scrollbar-color: @SecondaryBackgroundColor @borderColor;
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+        background: @borderColor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: @SecondaryBackgroundColor;
+        border: 1px solid @borderColor;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+body {
+    background-color: @PrimaryBackgroundColor;
+}
+
+label {
+    padding: @DefaultPadding;
+    border: 1px solid @borderColor;
+}
+
+input {
+    background-color: @SecondaryBackgroundColor;
+    border: 1px solid @borderColor;
+    padding: @DefaultPadding;
+}
+
+.p-10 {
+    padding: @DefaultPadding;
+}
+
+.m-10 {
+    margin: @DefaultPadding;
+}
+
+.button {
+    padding: @DefaultPadding;
+    cursor: pointer;
+    background-color: @SecondaryBackgroundColor;
+    border: 1px solid @borderColor;
+
+    &:hover {
+        background-color: @HoverColor;
+    }
+
+    &:active {
+        background-color: @ActiveColor;
+        color: @PrimaryBackgroundColor;
+    }
+}
+
+.userRecord {
+    border: 1px solid @borderColor;
+    padding: (@DefaultPadding/2px);
+}
+
+.input {
+    padding: @DefaultPadding;
+
+    button {
+        .button();
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+
+    div {
+        margin: @DefaultPadding;
+        .button();
+    }
+}
+
+.user {
+    .userRecord();
+    width: fit-content;
+    margin: @DefaultPadding;
+}
+
+.userList {
+    margin: @DefaultPadding;
+    width: fit-content;
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px solid @borderColor;
+
+    div {
+        .userRecord();
+    }
+}

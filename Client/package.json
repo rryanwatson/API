@@ -1,0 +1,27 @@
+{
+  "name": "client-app",
+  "version": "0.0.1",
+  "scripts": {
+    "buildDev": "webpack build --mode development",
+    "startAPI": "dotnet run --project ../ ",
+    "startDev": "npm run buildDev && npm run startAPI"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
